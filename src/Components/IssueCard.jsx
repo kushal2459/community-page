@@ -6,11 +6,11 @@ import Box from '@mui/material/Box';
 import '../index.css';
 import Switch from '@mui/material/Switch';
 import { useState } from 'react';
-import {styled} from '@mui/material';
+// import {styled} from '@mui/material';
 
-const Resolved = styled(Box)`
-        background : green;
-    ` 
+// const Resolved = styled(Box)`
+//         background : green;
+//     ` 
 
 const IssueCard = () => {
 
@@ -33,10 +33,10 @@ const IssueCard = () => {
 
                 <h4 className='ms-5'>Kushal Patel</h4>
             </div>
-            <Resolved className={`  flex items-center gap-1 justify-between w-52 pe-2 rounded `}>
+            <Box className={`  flex items-center gap-1 justify-between w-52 pe-2 rounded `}>
             <Switch checked={checked} onChange={handleChange} />
             <p>{checked ? 'Resolved' : 'Leave a comment'}</p>
-            </Resolved>
+            </Box>
         </Box>
         <Box className='ms-32 me-16 flex justify-between'>
             <div className='max-w-[780px]'>
