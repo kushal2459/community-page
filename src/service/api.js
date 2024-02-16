@@ -17,6 +17,3 @@ export const getIssue = async () => {
         console.log("error while getting issues", error.message)
     }
 }
-
-
-
