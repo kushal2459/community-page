@@ -14,21 +14,24 @@ const IssueCard = (props) => {
 
   return (
     <Paper className='py-5'>
-        <Box className='flex flex-wrap items-center justify-between px-14'>
+        {/* profile title leave a comment */}
+        <Box className='flex flex-wrap items-center justify-between md:px-14 px-6'>
+            {/* profile */}
             <div className='flex items-center '>
                 <Box className='h-[50px] w-[50px]'>
                     <img src={user1} alt="user" className='object-cover	w-full h-full rounded-full overflow-hidden'/>   
                 </Box>
-
-                <Typography variant='h6' sx={{margin:'0 25px'}}>{props.title}</Typography>
+                {/* title */}
+                <h6 className='mx-5 text-2xl font-semibold'>{props.title}</h6>
             </div>
-            <Box className={`  flex items-center gap-1 justify-between w-52 pe-2 rounded `}>
+            {/* leave a comment */}
+            <Box className={` items-center sm:gap-1 justify-between ml-auto w-52 pe-2 rounded sm:flex hidden`}>
             <Switch checked={checked} onChange={handleChange} />
             <p>{checked ? 'Resolved' : 'Leave a comment'}</p>
             </Box>
         </Box>
-        <Box className='ms-32 me-16 flex justify-between'>
-            <div className='max-w-[780px]'>
+        <Box className='lg:ms-32 lg:me-16 flex flex-col md:flex-row items-center justify-center md:justify-between '>
+            <div className='max-w-[780px] bg-red-200 md:p-0 p-5 mr-auto'>
             
             <Typography className='overflow-hidden' variant='subtex1' sx={{marginY : '8px', marginX:'8px'}}>{props.description}</Typography>
             

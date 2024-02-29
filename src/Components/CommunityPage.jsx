@@ -3,14 +3,11 @@ import IssueCard from './IssueCard'
 import Container from '@mui/material/Container'
 import { useEffect, useState } from 'react';
 import { getIssue } from '../service/api';
-// 
 import axios from 'axios';
-// 
 
 const CommunityPage = () => {
 
   const [ issues, setIssues ] = useState([]);
-// 
 const [files, setFiles] = useState([]);
 useEffect(() => {
   const fetchFiles = async () => {
@@ -24,7 +21,6 @@ useEffect(() => {
   fetchFiles();
 }, []);
 
-// 
   useEffect(() => {
     getIssueDetails();
   }, []);
@@ -37,7 +33,7 @@ useEffect(() => {
   return (
     <>
       <Container>
-        <div className='flex flex-col gap-16'>
+        <div className='flex flex-col md:gap-16 gap-8'>
 
         {issues.map(issue => (
           <IssueCard key={issue.id} description={issue.description} title={issue.title}/>
@@ -46,8 +42,6 @@ useEffect(() => {
           <li key={index}>{file.name}</li>
         ))}
         </div>
-
-        
       </Container>
     </>
   )
