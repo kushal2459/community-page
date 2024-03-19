@@ -2,16 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import CommunityPage from './Components/CommunityPage';
+import MainPage from './pages/MainPage';
 import Nav from './Components/Nav';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import FAQ from './Components/FAQ';
-import NewIssue from './Components/NewIssue';
+import FAQ from './pages/FAQ';
+import NewIssue from './pages/NewIssue';
 import { Box, Typography, Container } from '@mui/material';
 import { NavLink } from 'react-router-dom';
-
+import { store } from './app/store'
+import { Provider } from 'react-redux'
+ 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <Provider store={store}>
+
   <Router>
     <Nav />
     <Container>
@@ -35,10 +39,11 @@ root.render(
     <hr className="mb-5 borger-gray-600 border-t-2" />
 
     <Routes>
-      <Route path="/" element={<CommunityPage />} />
+      <Route path="/" element={<MainPage />} />
       <Route path="/faq" element={<FAQ />} />
       <Route path="/new-issue" element={<NewIssue />} />
     </Routes>
   </Router>
+  </Provider>
 );
 reportWebVitals();
